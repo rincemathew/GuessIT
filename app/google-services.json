@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "497093369832",
+    "firebase_url": "https://guessit-3b8e4.firebaseio.com",
+    "project_id": "guessit-3b8e4",
+    "storage_bucket": "guessit-3b8e4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:497093369832:android:3177f64ea9303eab",
+        "android_client_info": {
+          "package_name": "com.melisa.melisa.guessit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "497093369832-f7dgo9lbo5vg7k9nu6cc6lhtlffqh8o9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.melisa.melisa.guessit",
+            "certificate_hash": "cf8cfb7ce5142e175d524293564e49051a1ed6f2"
+          }
+        },
+        {
+          "client_id": "497093369832-mnb0m51tsqiduslitvv6kjq2uh5t9gf9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuWa-xPblweq64fBEEFMcTtdcfZhfGx9s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "497093369832-mnb0m51tsqiduslitvv6kjq2uh5t9gf9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
