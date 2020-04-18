@@ -3,22 +3,16 @@ package com.melisa.melisa.guessit;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
-import android.opengl.Visibility;
 import android.os.CountDownTimer;
-import android.support.annotation.DrawableRes;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.google.android.gms.ads.AdRequest;
@@ -81,7 +75,7 @@ public class questionActivityOneTwo extends Activity {
 
 
 
-        MobileAds.initialize(this,"ca-app-pub-6234689785392855~1030792716");
+        MobileAds.initialize(this,"ca-app-pub-6234689785392855/1695623537");
         madView=findViewById(R.id.adView);
         AdRequest adRequest=new AdRequest.Builder().build();
         madView.loadAd(adRequest);

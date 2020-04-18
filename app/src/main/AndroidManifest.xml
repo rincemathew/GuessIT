@@ -12,6 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ListItems"></activity>
+        <activity android:name=".PlayArea" />
+        <activity android:name=".CategoryList" />
         <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,8 +33,7 @@
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-6234689785392855~1030792716" />
-
-        <activity android:name=".questionActivityOneTwo"></activity>
+        <activity android:name=".questionActivityOneTwo" />
     </application>
 
 </manifest>

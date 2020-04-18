@@ -1,21 +1,18 @@
 package com.melisa.melisa.guessit;
 
 import android.app.Activity;
-import android.arch.core.util.Function;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.CountDownTimer;
-import android.provider.ContactsContract;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.google.android.gms.ads.AdRequest;
@@ -75,7 +72,7 @@ public class quizActivityOne extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_one);
 
-        MobileAds.initialize(this,"ca-app-pub-6234689785392855~1030792716");
+        MobileAds.initialize(this,"ca-app-pub-6234689785392855/1695623537");
         madView=findViewById(R.id.adView);
         AdRequest adRequest=new AdRequest.Builder().build();
         madView.loadAd(adRequest);

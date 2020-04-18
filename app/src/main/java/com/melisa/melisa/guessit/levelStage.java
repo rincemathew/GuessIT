@@ -2,13 +2,18 @@ package com.melisa.melisa.guessit;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 public class levelStage extends Activity {
+
+    AdView madView;
 
     LinearLayout levelone,secondLevel,thirdLevel,level4,level5,level6,level7,level8,level9,level10,level11,
     level12,level13,level14,level15,level16,level17,level18,level19,level20,level21,level22,level23,level24,
@@ -19,6 +24,11 @@ public class levelStage extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_stage);
+
+        MobileAds.initialize(this,"ca-app-pub-6234689785392855/6944080780");
+        madView=findViewById(R.id.adView);
+        AdRequest adRequest=new AdRequest.Builder().build();
+        madView.loadAd(adRequest);
 
         levelone=findViewById(R.id.firstLevel);
         secondLevel=findViewById(R.id.secondlevel);

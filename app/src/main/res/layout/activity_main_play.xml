@@ -53,6 +53,17 @@
         android:textColor="#FFF"
         android:background="@drawable/normal"
         android:layout_margin="5dp" />
+        <Button
+            android:text="TIMER QUIZ"
+            android:id="@+id/timerPlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:textColor="#FFF"
+            android:background="@drawable/normal"
+            android:layout_margin="5dp" />
     <Button
         android:textColor="#FFF"
         android:text="Daily Challenge"
@@ -61,6 +72,7 @@
         android:layout_height="wrap_content"
         android:textSize="20dp"
         android:textStyle="bold"
+        android:visibility="gone"
         android:padding="5dp"
         android:background="@drawable/normal"
         android:layout_margin="5dp" />

@@ -103,7 +103,7 @@ public class questionActivityOneThree extends Activity{
 
 
 
-        MobileAds.initialize(this,"ca-app-pub-6234689785392855~1030792716");
+        MobileAds.initialize(this,"ca-app-pub-6234689785392855/1695623537");
         madView=findViewById(R.id.adView);
         AdRequest adRequest=new AdRequest.Builder().build();
         madView.loadAd(adRequest);

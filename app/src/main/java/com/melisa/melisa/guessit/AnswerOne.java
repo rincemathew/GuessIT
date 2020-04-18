@@ -1,13 +1,14 @@
 package com.melisa.melisa.guessit;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 
 public class AnswerOne extends AppCompatActivity {
 
@@ -16,17 +17,24 @@ public class AnswerOne extends AppCompatActivity {
     TextView textViewScore;
     TextView txtOne,txtTwo,txtThree;
 
+    private InterstitialAd mInterstitialAd;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_answer_one);
 
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-6234689785392855/3200276895");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+
         buttonBack=findViewById(R.id.buttonback);
         textViewScore=findViewById(R.id.score);
         txtOne=findViewById(R.id.txtone);
         txtTwo=findViewById(R.id.txttwo);
         txtThree=findViewById(R.id.txtthree);
+
 
         Intent intent = getIntent();
         int score = intent.getIntExtra("score", 0);
@@ -92,8 +100,13 @@ public class AnswerOne extends AppCompatActivity {
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AnswerOne.this, levelStage.class);
-                startActivity(intent);
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                } else {
+                    Intent intent = new Intent(AnswerOne.this, levelStage.class);
+                    startActivity(intent);
+                }
+
             }
         });
 
@@ -101,7 +114,11 @@ public class AnswerOne extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(AnswerOne.this, levelStage.class);
-        startActivity(intent);
+        if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        } else {
+            Intent intent = new Intent(AnswerOne.this, levelStage.class);
+            startActivity(intent);
+        }
     }
 }

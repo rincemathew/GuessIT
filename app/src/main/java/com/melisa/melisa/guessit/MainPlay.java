@@ -1,12 +1,15 @@
 package com.melisa.melisa.guessit;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +18,7 @@ import android.widget.Toast;
 
 public class MainPlay extends Activity {
 
-    Button play;
+    Button play,timerPlay;
     Button dailychallenge;
     Button settings;
     Dialog myDialog;
@@ -27,6 +30,7 @@ public class MainPlay extends Activity {
         setContentView(R.layout.activity_main_play);
 
         play=findViewById(R.id.play);
+        timerPlay=findViewById(R.id.timerPlay);
         dailychallenge=findViewById(R.id.daily);
         settings=findViewById(R.id.settings);
         myDialog = new Dialog(this);
@@ -34,9 +38,16 @@ public class MainPlay extends Activity {
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(MainPlay.this,levelStage.class);
+                Intent intent= new Intent(MainPlay.this,CategoryList.class);
                 startActivity(intent);
                 }
+        });
+        timerPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(MainPlay.this,levelStage.class);
+                startActivity(intent);
+            }
         });
         dailychallenge.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,8 +124,32 @@ public class MainPlay extends Activity {
                 reset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(MainPlay.this, "cache cleared",
-                                Toast.LENGTH_LONG).show();
+                        if (Build.VERSION_CODES.KITKAT <= Build.VERSION.SDK_INT) {
+//                            Toast.makeText(MainPlay.this, "Restart the application to use",
+//                                    Toast.LENGTH_LONG).show();
+                            ((ActivityManager)MainPlay.this.getSystemService(ACTIVITY_SERVICE))
+                                    .clearApplicationUserData(); // note: it has a return value!
+
+                        } else {
+                            Toast.makeText(MainPlay.this, "something went wrong",
+                                    Toast.LENGTH_LONG).show();
+                            // use old hacky way, which can be removed
+                            // once minSdkVersion goes above 19 in a few years.
+                        }
+//                        try {
+//                            // clearing app data
+//                            if (Build.VERSION_CODES.KITKAT <= Build.VERSION.SDK_INT) {
+//                                ((ActivityManager)getSystemService(ACTIVITY_SERVICE)).clearApplicationUserData(); // note: it has a return value!
+//                            } else {
+//                                String packageName = getApplicationContext().getPackageName();
+//                                Runtime runtime = Runtime.getRuntime();
+//                                runtime.exec("pm clear "+packageName);
+//                            }
+//
+//                        } catch (Exception e) {
+//                            e.printStackTrace();
+//                        }
+
 
                     }
                 });
